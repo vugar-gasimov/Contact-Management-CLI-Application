@@ -1,10 +1,9 @@
-const yargs = require("yargs");
-const { hideBin } = require("yargs/helpers");
+const { program } = require("commander");
 const contacts = require("./contacts");
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
-    case "AllContactsList":
+    case "getAllContacts":
       const allContacts = await contacts.getAllContacts();
       return console.log(allContacts);
 
@@ -33,6 +32,13 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-const arr = hideBin(process.argv);
-const { argv } = yargs(arr);
-invokeAction(argv);
+program
+  .option("a, --action, <type>")
+  .option("i, --id, <type>")
+  .option("n, --name, <type>")
+  .option("e, --email, <type>")
+  .option("p, --phone, <type>");
+program.parse();
+
+const options = program.opts();
+invokeAction(options);
