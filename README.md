@@ -1,5 +1,11 @@
 # NodeJs-HwOne
 
+// const actionIndex = process.argv.indexOf("--action");
+// if (actionIndex !== -1) {
+//   const action = process.argv[actionIndex + 1];
+//   invokeAction({ action });
+// }
+
 // invokeAction({ action: "AllContactsList" });
 
 // invokeAction({ action: "getContactById", id: "AeHIrLTr6JkxGE6SN-0Rw" });

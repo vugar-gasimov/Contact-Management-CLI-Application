@@ -1,3 +1,5 @@
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 const contacts = require("./contacts");
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
@@ -25,11 +27,12 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case "removeContactById":
       const removedContact = await contacts.removeContactById(id);
       return console.log(removedContact);
+
+    default:
+      return console.log("Unknown action");
   }
 };
 
-const actionIndex = process.argv.indexOf("--action");
-if (actionIndex !== -1) {
-  const action = process.argv[actionIndex + 1];
-  invokeAction({ action });
-}
+const arr = hideBin(process.argv);
+const { argv } = yargs(arr);
+invokeAction(argv);
