@@ -1,1 +1,24 @@
 # NodeJs-HwOne
+
+// invokeAction({ action: "AllContactsList" });
+
+// invokeAction({ action: "getContactById", id: "AeHIrLTr6JkxGE6SN-0Rw" });
+
+// invokeAction({
+//   action: "addContact",
+//   name: "Clementine Bauch",
+//   email: "Nathan@yesenia.net",
+//   phone: "1-463-123-4447",
+// });
+
+// invokeAction({
+//   action: "updateContactById",
+//   id: "J9Ci1aZN5H1rhoqQi_G3e",
+//   name: "Clementine Bauch",
+//   email: "Clementinebauch@yesenia.com",
+//   phone: "1-463-123-4447",
+// });
+
+// invokeAction({ action: "removeContactById", id: "J9Ci1aZN5H1rhoqQi_G3e" });
+
+// AllContactsList, getContactById,  addContact, updateContactById, removeContactById
