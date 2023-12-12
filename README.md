@@ -1,37 +1,55 @@
-# NodeJs-HwOne
 
-// const yargs = require("yargs");
-// const { hideBin } = require("yargs/helpers");
+# Contact-Management-CLI-Application
 
-// const arr = hideBin(process.argv);
-// const { argv } = yargs(arr);
-// invokeAction(argv);
+## Overview
 
-// const actionIndex = process.argv.indexOf("--action");
-// if (actionIndex !== -1) {
-// const action = process.argv[actionIndex + 1];
-// invokeAction({ action });
-// }
+This CLI application manages contacts by performing various operations such as listing contacts, adding new contacts, updating existing contacts, and removing contacts. The project utilizes Node.js, fs module for file operations, and Commander for parsing command line arguments.
 
-// invokeAction({ action: "AllContactsList" });
+## Installation
+To set up and run the project:
 
-// invokeAction({ action: "getContactById", id: "AeHIrLTr6JkxGE6SN-0Rw" });
+1. Clone the repository.
+2. Install dependencies: `npm install`.
+3. Run the application with appropriate commands.
 
-// invokeAction({
-// action: "addContact",
-// name: "Clementine Bauch",
-// email: "Nathan@yesenia.net",
-// phone: "1-463-123-4447",
-// });
+## Usage
+### Step 1: Setting Up Contact Data
+- The contacts are stored in a JSON file named `contacts.json` within the 'db' folder.
 
-// invokeAction({
-// action: "updateContactById",
-// id: "J9Ci1aZN5H1rhoqQi_G3e",
-// name: "Clementine Bauch",
-// email: "Clementinebauch@yesenia.com",
-// phone: "1-463-123-4447",
-// });
+### Step 2: Implementing Contact Functions
+The `contacts.js` file contains functions to manage contacts:
+- `getAllContacts()`: Retrieves all contacts.
+- `getContactById(id)`: Gets a contact by its ID.
+- `addNewContact({ name, email, phone })`: Adds a new contact with name, email, and phone.
+- `updateContactById(id, { name, email, phone })`: Updates an existing contact by ID.
+- `removeContactById(id)`: Removes a contact by its ID.
 
-// invokeAction({ action: "removeContactById", id: "J9Ci1aZN5H1rhoqQi_G3e" });
+### Step 3: Command Line Usage
+The `index.js` file uses Commander to parse command line arguments for performing contact actions.
 
-// AllContactsList, getContactById, addContact, updateContactById, removeContactById
+### Step 4: Running Commands
+To perform actions on contacts via command line:
+- `node index.js --action getAllContacts`: Lists all contacts.
+- `node index.js --action getContactById --id [contact ID]`: Retrieves a contact by ID.
+- `node index.js --action addContact --name [Name] --email [Email] --phone [Phone]`: Adds a new contact.
+- `node index.js --action updateContactById --id [contact ID] --name [New Name] --email [New Email] --phone [New Phone]`: Updates a contact by ID.
+- `node index.js --action removeContactById --id [contact ID]`: Removes a contact by ID.
+
+## Project Structure
+- `contacts.js`: Contains functions for contact management.
+- `index.js`: Parses command line arguments and invokes contact actions.
+
+## Contributing
+
+If you're interested in contributing, reach out with your ideas at vuqar5qasimov@gmail.com. We welcome code contributions, bug fixes, design enhancements, and feature suggestions.
+
+## Dependencies
+- Node.js
+- fs module
+- commander
+
+## Author
+
+Vugar Gasimov
+
+Your feedback and contributions are highly appreciated!
